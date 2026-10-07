@@ -1,0 +1,636 @@
+/* =====================================================
+   SOBRE — FOLHA DE ESTILOS
+
+   Paleta: Seal Brown · Satin Sheen Gold · Dun
+           Cadet Gray · Bistre
+   ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600&display=swap");
+
+
+/* =====================================================
+   VARIÁVEIS
+   ===================================================== */
+
+:root {
+    --seal-brown: #6b2717;
+    --gold: #cc9e4c;
+    --dun: #e0d0b6;
+    --cadet-gray: #8b9ea5;
+    --bistre: #442c1b;
+
+    --seal-brown-escuro: #521d11;
+    --gold-escuro: #a87d33;
+    --gold-claro: #f3e6c8;
+
+    --papel: #f7f1e5;
+    --superficie: #fdfaf4;
+    --cadet-escuro: #5b6e75;
+
+    --fundo: #623513;
+    --card: #ecdfc6;
+
+    --texto: var(--bistre);
+    --texto-suave: #5e4a3a;
+    --titulo: var(--seal-brown);
+
+    --borda: #cdb894;
+    --destaque: var(--gold);
+
+    --fonte-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+    --fonte-texto: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+
+    --sombra:
+        0 2px 6px rgba(0, 0, 0, 0.25),
+        0 14px 34px rgba(0, 0, 0, 0.30);
+
+    --sombra-hover:
+        0 4px 10px rgba(0, 0, 0, 0.30),
+        0 20px 44px rgba(0, 0, 0, 0.40);
+
+    --raio-grande: 14px;
+    --raio-medio: 10px;
+    --raio-pequeno: 6px;
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--fonte-texto);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--texto);
+    background-color: var(--fundo);
+    background-image:
+        radial-gradient(
+            ellipse 45% 35% at 8% 12%,
+            rgba(204, 158, 76, 0.28),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 40% 40% at 95% 30%,
+            rgba(139, 158, 165, 0.22),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 40% at 15% 85%,
+            rgba(107, 39, 23, 0.55),
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 40% 35% at 90% 92%,
+            rgba(204, 158, 76, 0.20),
+            transparent 70%
+        );
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* =====================================================
+   ESTRUTURA PRINCIPAL
+   ===================================================== */
+
+main {
+    width: 100%;
+    padding: 0 3%;
+    margin: 0 auto 30px;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+header {
+    padding: 20px 0 0;
+    text-align: center;
+    color: var(--dun);
+    background:
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(204, 158, 76, 0.30),
+            transparent 50%
+        ),
+        linear-gradient(
+            160deg,
+            #86321d 0%,
+            var(--seal-brown) 45%,
+            #4a180d 100%
+        );
+    border-bottom: 4px solid var(--gold);
+    border-radius: 0 0 var(--raio-grande) var(--raio-grande);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    margin: 0 auto 30px;
+}
+
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.logo img{
+    width: 150px;
+    height: 150px;
+}
+
+
+/* =====================================================
+   MENU
+   ===================================================== */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid rgba(224, 208, 182, 0.20);
+    justify-content: space-around;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    color: rgba(224, 208, 182, 0.78);
+    font-size: .95rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease;
+    flex: 1;
+}
+
+nav a:hover {
+    color: var(--dun);
+    background: rgba(224, 208, 182, 0.08);
+}
+
+nav a#aba-ativa,
+nav a[aria-current="page"] {
+    color: var(--gold);
+    background: rgba(204, 158, 76, 0.10);
+    border-bottom-color: var(--gold);
+}
+
+
+/* =====================================================
+   SEÇÃO SOBRE
+   ===================================================== */
+
+.sobre {
+    padding: 25px 20px;
+    background: var(--papel);
+    border-radius: var(--raio-grande);
+    border: 1px solid var(--borda);
+    box-shadow: var(--sombra);
+}
+
+
+/* =====================================================
+   TÍTULO
+   ===================================================== */
+
+.sobre h1 {
+    margin: 0;
+    text-align: center;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2.3rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--seal-brown);
+    letter-spacing: -0.02em;
+}
+
+
+/* =====================================================
+   LINHA DOURADA
+   ===================================================== */
+
+.linha-dourada {
+    width: 90px;
+    height: 4px;
+    margin: 20px auto 45px;
+    background: linear-gradient(
+        90deg,
+        var(--gold-escuro),
+        var(--gold),
+        var(--gold-escuro)
+    );
+    border-radius: 10px;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =====================================================
+   EQUIPE
+   ===================================================== */
+
+.equipe {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+/* =====================================================
+   CARD DOS INTEGRANTES
+   ===================================================== */
+
+.card-integrante {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card-integrante:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: var(--sombra-hover);
+}
+
+.card-grupo {
+    display: flex;
+    align-items: stretch;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.card-grupo:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+    box-shadow: var(--sombra-hover);
+}
+
+/* =====================================================
+   IMAGENS
+   ===================================================== */
+
+.card-integrante img {
+    width: 180px;
+    min-width: 180px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-right: 1px solid var(--borda);
+}
+
+.card-grupo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-right: 1px solid var(--borda);
+}
+
+
+/* =====================================================
+   DESCRIÇÃO
+   ===================================================== */
+
+.descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.descricao h2 {
+    margin: 0 0 10px;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.5rem, 2.2vw, 1.9rem);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--seal-brown);
+}
+
+.descricao p {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   DESTAQUE SUTIL NOS CARDS
+   ===================================================== */
+
+.card-integrante::after {
+    content: "";
+
+    position: absolute;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+footer {
+    padding: 28px 25px;
+    text-align: center;
+    font-size: .92rem;
+    color: rgba(224, 208, 182, 0.85);
+    background:
+        linear-gradient(
+            160deg,
+            #3a2314,
+            #1f1209
+        );
+    border-top: 4px solid var(--gold);
+    border-radius: var(--raio-grande) var(--raio-grande) 0 0;
+    box-shadow: var(--sombra);
+}
+
+footer p{
+    margin: 0px;
+}
+
+footer p:first-child {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+
+/* =====================================================
+   SELEÇÃO DE TEXTO
+   ===================================================== */
+
+::selection {
+    color: var(--bistre);
+    background: var(--gold);
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+   ===================================================== */
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: var(--raio-pequeno);
+}
+
+
+/* =====================================================
+   TABLETS
+   ===================================================== */
+@media (max-width: 1250px){
+    .equipe {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sobre {
+        padding: 45px 35px;
+    }
+
+    .equipe {
+        gap: 20px;
+    }
+
+    .card-integrante img {
+        width: 145px;
+        min-width: 145px;
+        height: 100%;
+    }
+
+    .descricao {
+        padding: 20px;
+    }
+}
+
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 28px 0 0;
+        border-radius: 0 0 var(--raio-medio) var(--raio-medio);
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+    }
+
+    .logo img{
+        width: 100px;
+        height: 100px;
+    }
+
+    nav a {
+        flex: 1 1 auto;
+        padding: 12px 10px;
+        font-size: 0.78rem;
+    }
+
+    .sobre {
+        padding: 25px 20px;
+        border-radius: var(--raio-medio);
+    }
+
+    .sobre h1 {
+        font-size: 2.3rem;
+    }
+
+    .linha-dourada {
+        margin-bottom: 30px;
+    }
+
+    .equipe {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-integrante {
+        width: 100%;
+    }
+
+    .card-integrante img {
+        width: 150px;
+        height: 100%;
+    }
+
+    .descricao {
+        padding: 20px;
+    }
+
+    .descricao h2 {
+        font-size: 1.5rem;
+    }
+
+    footer{
+        border-radius: var(--raio-medio) var(--raio-medio) 0 0;
+    }
+}
+
+@media (max-width: 700px){
+    .card-integrante {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card-integrante img {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+
+/* =====================================================
+   CELULARES PEQUENOS
+   ===================================================== */
+
+@media (max-width: 480px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    .sobre {
+        padding: 30px 16px;
+    }
+
+    .sobre h1 {
+        font-size: 2rem;
+    }
+
+    .card-integrante {
+        display: block;
+    }
+
+    .card-integrante img {
+        width: 100%;
+        height: 350px;
+        border-right: none;
+        border-bottom: 1px solid var(--borda);
+    }
+
+    .descricao {
+        padding: 10px;
+    }
+
+    nav a {
+        padding: 11px 7px;
+        font-size: 0.82rem;
+    }
+}
+
+
+/* =====================================================
+   IMPRESSÃO
+   ===================================================== */
+
+@media print {
+
+    body {
+        padding: 0;
+
+        color: #000;
+
+        background: #fff;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header,
+    footer,
+    .sobre,
+    .card-integrante {
+        color: #000;
+
+        background: #fff;
+
+        border: 1px solid #ccc;
+
+        box-shadow: none;
+    }
+
+    .logo,
+    footer p,
+    .sobre h1,
+    .descricao h2,
+    .descricao p {
+        color: #000;
+    }
+
+    .card-integrante {
+        break-inside: avoid;
+    }
+}
+
+
+/* =====================================================
+   MOVIMENTO REDUZIDO
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}

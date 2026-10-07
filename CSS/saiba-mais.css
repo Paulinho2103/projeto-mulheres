@@ -1,0 +1,673 @@
+/* =====================================================
+   MULHERES DA ESCOLA — FOLHA DE ESTILOS
+   Paleta: Seal Brown · Satin Sheen Gold · Dun · Cadet Gray · Bistre
+   ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;500;600&display=swap");
+
+:root {
+    --seal-brown:#6b2717;
+    --gold:#cc9e4c;
+    --dun:#e0d0b6;
+    --cadet-gray:#8b9ea5;
+    --bistre:#442c1b;
+    --seal-brown-escuro:#521d11;
+    --gold-escuro:#a87d33;
+    --gold-claro:#f3e6c8;
+    --dun-claro:#f7f1e5;
+    --cadet-escuro:#5b6e75;
+    --fundo-pagina:#623513;
+    --fundo-entrevista:var(--seal-brown);
+    --card-apresentacao:#ecdfc6;
+    --card-foto:#e0d0b6;
+    --borda-entrevista:var(--gold);
+    --texto:var(--bistre);
+    --texto-entrevista:var(--dun);
+    --titulo:var(--seal-brown);
+    --titulo-entrevista:var(--dun);
+    --subtitulo-entrevista:var(--gold-claro);
+    --borda:#cdb894;
+    --fonte-titulo:"Playfair Display",Georgia,"Times New Roman",serif;
+    /* O logo usa a mesma fonte das outras páginas do site */
+    --fonte-logo:"Fraunces",Georgia,"Times New Roman",serif;
+    --fonte-texto:"Source Sans 3","Segoe UI",Tahoma,sans-serif;
+    --sombra:0 4px 12px rgba(0,0,0,.25),0 12px 32px rgba(0,0,0,.30);
+    --sombra-hover:0 6px 18px rgba(0,0,0,.30),0 18px 42px rgba(0,0,0,.40);
+    --raio-grande:14px;
+    --raio-medio:10px;
+    --raio-pequeno:6px;
+
+    --fundo-body: #e6cfab;
+
+    --fundo-card-maes: #6F7042;
+    --fundo-card-gestao: #A99A86;
+    --fundo-card-adm: #87986A;
+    --fundo-card-docente: #DCC9AD;
+    --fundo-card-limpeza: #B58A52;
+    --fundo-card-cozinha: #B8794A;
+    --fundo-card-demais-serv: #A65F3F;
+    --fundo-card-seguranca: #416B6B;
+
+
+
+    
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+    width:100%;
+    font-family:var(--fonte-texto);
+    font-size:17px;
+    line-height:1.75;
+    color:var(--texto);
+    background-color:var(--fundo-body);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+}
+
+/* Mesma largura e centralização do cabeçalho nas outras páginas */
+main {
+    width:100%;
+    padding: 0 3%;
+    margin:0 auto 30px;
+}
+
+header,
+footer{
+    width: 100%;
+}
+
+::selection {
+    color:var(--bistre);
+    background:var(--gold);
+}
+
+/* ===== CABEÇALHO ===== */
+
+header {
+    padding: 20px 0 0;
+    text-align: center;
+    color: var(--dun);
+    background:
+        radial-gradient(circle at 92% 0%,
+        rgba(204,158,76,.30),transparent 50%),
+        linear-gradient(
+            160deg,
+            #86321d 0%,
+            var(--seal-brown) 55%,
+            #4a180d 100%);
+    border-bottom: 4px solid var(--gold);
+    border-radius: 0 0 var(--raio-grande) var(--raio-grande);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    margin: 0 auto 30px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.logo img{
+    width: 150px;
+    height: 150px;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid rgba(224,208,182,.20);
+    justify-content: space-around;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    color: rgba(224,208,182,.78);
+    font-size: .95rem;
+    font-weight: 500;
+    text-decoration: none;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    transition: color .25s ease,background-color .25s ease,border-color .25s ease;
+    flex: 1;
+}
+
+nav a:hover {
+    color: var(--dun);
+    background: rgba(224,208,182,.08);
+}
+
+nav a#aba-ativa,
+nav a[aria-current="page"] {
+    color:var(--gold);
+    font-weight:600;
+    background:rgba(204,158,76,.10);
+    border-bottom-color:var(--gold);
+}
+
+/* ===== APRESENTAÇÃO E MENSAGEM FINAL ===== */
+
+.apresentacao,
+.mensagem-final {
+    width:100%;
+    margin-bottom:28px;
+    padding:38px 40px;
+    background-color:var(--card-apresentacao);
+    border:1px solid var(--borda);
+    border-left:5px solid var(--gold);
+    border-radius:var(--raio-grande);
+    box-shadow:var(--sombra);
+}
+
+.mensagem-final {
+    text-align:center;
+    border-left:1px solid var(--borda);
+    border-top:5px solid var(--gold);
+}
+
+.apresentacao h2,
+.mensagem-final h2 {
+    margin-bottom:14px;
+    font-family:var(--fonte-titulo);
+    font-size:clamp(1.5rem,2.4vw,2rem);
+    font-weight:600;
+    line-height:1.25;
+    color:var(--titulo);
+}
+
+.apresentacao p,
+.mensagem-final p {
+    color:var(--texto);
+}
+
+.texto-introducao {
+    margin-bottom:8px;
+    color:var(--seal-brown);
+    font-size:1.08rem;
+}
+
+/* ===== ENTREVISTAS ===== */
+
+.entrevistas {
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+    width:100%;
+    margin-bottom:28px;
+}
+
+.entrevistas h2 {
+    position:relative;
+    margin-bottom:0;
+    padding-bottom:14px;
+    font-family:var(--fonte-titulo);
+    font-size:clamp(1.5rem,2.4vw,2rem);
+    font-weight:600;
+    color:var(--seal-brown);
+}
+
+.entrevistas h2::after {
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:64px;
+    height:4px;
+    background:var(--gold);
+    border-radius:2px;
+}
+
+.perfil {
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    gap:26px;
+    width:100%;
+    min-width:0;
+}
+
+.perfil:nth-of-type(even) {
+    flex-direction:row-reverse;
+}
+
+.foto {
+    flex:0 0 280px;
+    align-self:flex-start;
+    position:sticky;
+    top:20px;
+    padding:8px;
+    background-color:var(--card-foto);
+    border:2px solid var(--gold);
+    border-radius:var(--raio-grande);
+    box-shadow:var(--sombra);
+    overflow:hidden;
+    transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease;
+}
+
+.foto img {
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    object-position:center top;
+    border-radius:var(--raio-medio);
+    transition:transform .4s ease;
+}
+
+.foto:hover {
+    border-color:var(--gold-claro);
+    box-shadow:var(--sombra-hover);
+    transform:translateY(-3px);
+}
+
+.foto:hover img {
+    transform:scale(1.025);
+}
+
+.conteudo {
+    flex:1;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    padding:36px 40px;
+    background-color:var(--fundo-entrevista);
+    border:2px solid var(--borda-entrevista);
+    border-radius:var(--raio-grande);
+    box-shadow:var(--sombra);
+    transition:border-color .25s ease,box-shadow .25s ease;
+}
+
+.conteudo:hover {
+    border-color:var(--gold-claro);
+    box-shadow:var(--sombra-hover);
+}
+
+.conteudo-adriana,
+.conteudo-sylene,
+.conteudo-fabiana,
+.conteudo-rosemeire,
+.conteudo-mariana{
+    background-color: var(--fundo-card-maes);
+}
+
+.conteudo-valeria,
+.conteudo-carla,
+.conteudo-samara{
+    background-color: var(--fundo-card-gestao);
+}
+
+
+.conteudo-thay,
+.conteudo-karina{
+    background-color: var(--fundo-card-adm);
+}
+
+.conteudo-thalita,
+.conteudo-edna,
+.conteudo-flavienne {
+    background-color: var(--fundo-card-docente);
+}
+
+.conteudo-eliane,
+.conteudo-maria{
+    background-color: var(--fundo-card-limpeza);
+}
+
+.conteudo-sirlei,
+.conteudo-aline{
+    background-color: var(--fundo-card-cozinha);
+}
+
+.conteudo-lucimara,
+.conteudo-layla,
+.conteudo-isabela,
+.conteudo-kyan-luisa{
+    background-color: var(--fundo-card-demais-serv);
+}
+
+
+.conteudo-tiafabi{
+    background-color: var(--fundo-card-seguranca);
+}
+
+.conteudo h3 {
+    margin-bottom:4px;
+    font-family:var(--fonte-titulo);
+    font-size:clamp(1.5rem,2.3vw,1.9rem);
+    font-weight:700;
+    line-height:1.25;
+    color:var(--titulo-entrevista);
+}
+
+.cargo {
+    display:block;
+    margin-bottom:24px;
+    padding-bottom:16px;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--gold-claro);
+    opacity:.95;
+    border-bottom:1px solid rgba(204,158,76,.30);
+}
+
+.conteudo h4 {
+    margin-bottom:14px;
+    font-family:var(--fonte-titulo);
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--gold-claro);
+}
+
+.conteudo p {
+    margin-bottom:18px;
+    font-size:1.02rem;
+    color:var(--texto-entrevista);
+    text-align:left;
+    overflow-wrap:anywhere;
+}
+
+.conteudo p:last-of-type {
+    margin-bottom:0;
+}
+
+.conteudo-edna h4,
+.conteudo-thalita h4,
+.conteudo-flavienne h4,
+.conteudo-valeria h4,
+.conteudo-samara h4,
+.conteudo-carla h4 {
+    color: var(--bistre);
+}
+
+.conteudo-edna span,
+.conteudo-thalita span,
+.conteudo-flavienne span,
+.conteudo-valeria span,
+.conteudo-samara span,
+.conteudo-carla span {
+    color: var(--bistre);
+}
+
+.conteudo-edna p,
+.conteudo-thalita p,
+.conteudo-flavienne p,
+.conteudo-valeria p,
+.conteudo-samara p,
+.conteudo-carla p {
+    color: var(--bistre);
+}
+
+.conteudo-edna h3,
+.conteudo-thalita h3,
+.conteudo-flavienne h3,
+.conteudo-valeria h3,
+.conteudo-samara h3,
+.conteudo-carla h3 {
+    color: var(--bistre);
+}
+
+
+blockquote {
+    margin-top:28px;
+    padding:24px 28px;
+    font-family:var(--fonte-titulo);
+    font-size:1.12rem;
+    font-style:italic;
+    line-height:1.75;
+    color:var(--bistre);
+    background:var(--dun-claro);
+    border-left:5px solid var(--gold);
+    border-radius:0 var(--raio-medio) var(--raio-medio) 0;
+    box-shadow:0 4px 12px rgba(0,0,0,.20);
+}
+
+/* ===== BOTÃO 'VOLTAR' ===== */
+.voltar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.voltar a {
+    display: inline-block;
+    padding: 12px 35px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dun);
+
+    background: linear-gradient(160deg,
+    #86321d,
+    var(--seal-brown-escuro));
+
+    border: 2px solid var(--gold);
+    border-radius: var(--raio-medio);
+    box-shadow: var(--sombra);
+
+    transition: color .25s ease, background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.voltar a:hover {
+    color: var(--bistre);
+    background: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+    padding: 28px 25px;
+    text-align: center;
+    font-size: .92rem;
+    color: rgba(224,208,182,.85);
+    background: linear-gradient(160deg,#3a2314,#1f1209);
+    border-top: 4px solid var(--gold);
+    border-radius: var(--raio-grande) var(--raio-grande) 0 0;
+    box-shadow: var(--sombra);
+}
+
+footer p{
+    margin: 0px;
+}
+
+footer p:first-child {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+    border-radius:var(--raio-pequeno);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width:900px) {
+    .perfil,
+    .perfil:nth-of-type(even) {
+        gap:20px;
+    }
+
+    .foto {
+        flex-basis: 220px;
+    }
+
+    .conteudo,
+    .apresentacao,
+    .mensagem-final {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .perfil,
+    .perfil:nth-of-type(even) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .foto {
+        position: static;
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 340px;
+        align-self: center;
+    }
+
+    .foto img {
+        aspect-ratio: 4/3;
+    }
+}
+
+/* ===== TELAS PEQUENAS ===== */
+
+@media (max-width: 650px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        padding: 28px 0 0;
+        border-radius: 0 0 var(--raio-medio) var(--raio-medio);
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+    }
+
+    .logo img{
+        width: 100px;
+        height: 100px;
+    }
+
+    nav a {
+        flex: 1 1 auto;
+        padding:12px 10px;
+        font-size:.78rem;
+    }
+
+    .conteudo,
+    .apresentacao,
+    .mensagem-final {
+        padding:22px;
+    }
+
+    .entrevistas {
+        gap:20px;
+    }
+
+    blockquote {
+        padding:18px 20px;
+    }
+
+    footer{
+        border-radius: var(--raio-medio) var(--raio-medio) 0 0;
+    }
+}
+
+/* ===== TELAS MUITO PEQUENAS ===== */
+
+@media (max-width:400px) {
+    body {
+        font-size: 12px;
+    }
+
+    .conteudo,
+    .apresentacao,
+    .mensagem-final {
+        padding:16px;
+    }
+
+    nav a {
+        padding:11px 7px;
+        font-size: .72rem;
+    }
+}
+
+/* ===== IMPRESSÃO ===== */
+
+@media print {
+    body {
+        margin: 0;
+        padding:0;
+        color:#000;
+        background:#fff;
+    }
+
+    nav,
+    .voltar {
+        display:none;
+    }
+
+    header,
+    footer {
+        color:#000;
+        background:#fff;
+        border:1px solid #ccc;
+        box-shadow:none;
+    }
+
+    .logo,
+    footer p:first-child {
+        color:#000;
+    }
+
+    .foto {
+        position:static;
+        flex-basis:160px;
+    }
+
+    .foto,
+    .conteudo,
+    .apresentacao,
+    .mensagem-final {
+        box-shadow:none;
+        break-inside:avoid;
+    }
+
+    blockquote {
+        color:#000;
+        background:#f2f2f2;
+    }
+}
+
+/* ===== REDUÇÃO DE MOVIMENTO ===== */
+
+@media (prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition:none !important;
+    }
+}

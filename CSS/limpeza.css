@@ -1,0 +1,604 @@
+/* =====================================================
+   MULHERES DA ESCOLA — GESTÃO
+   Paleta: Seal Brown · Satin Sheen Gold · Dun
+   Cadet Gray · Bistre
+   ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:wght@400;500;600&display=swap");
+
+/* ===== VARIÁVEIS ===== */
+
+:root {
+    --seal-brown: #6b2717;
+    --gold: #cc9e4c;
+    --dun: #e0d0b6;
+    --cadet-gray: #8b9ea5;
+    --bistre: #442c1b;
+
+    --seal-brown-escuro: #521d11;
+    --gold-escuro: #a87d33;
+    --gold-claro: #f3e6c8;
+    --dun-claro: #f7f1e5;
+    --cadet-escuro: #5b6e75;
+
+    --fundo-pagina: #623513;
+    --card: #ecdfc6;
+    --texto: #442c1b;
+    --borda: #cdb894;
+
+    --fonte-titulo: "Playfair Display", Georgia, serif;
+    /* O logo usa a mesma fonte das outras páginas do site */
+    --fonte-logo: "Fraunces", Georgia, "Times New Roman", serif;
+    --fonte-texto: "Source Sans 3", "Segoe UI", sans-serif;
+
+    --sombra: 0 4px 12px rgba(0,0,0,.25),
+              0 12px 32px rgba(0,0,0,.30);
+
+    --sombra-hover: 0 6px 18px rgba(0,0,0,.30),
+                    0 18px 42px rgba(0,0,0,.40);
+
+    --raio-grande: 14px;
+    --raio-medio: 10px;
+    --raio-pequeno: 6px;
+}
+
+/* ===== CONFIGURAÇÕES GERAIS ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--fonte-texto);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--texto);
+
+    background-color: var(--fundo-pagina);
+    background-image:
+        radial-gradient(ellipse 45% 35% at 6% 10%,
+        rgba(204,158,76,.20), transparent 70%),
+        radial-gradient(ellipse 45% 40% at 96% 28%,
+        rgba(139,158,165,.18), transparent 70%),
+        radial-gradient(ellipse 50% 40% at 12% 88%,
+        rgba(107,39,23,.55), transparent 70%),
+        radial-gradient(ellipse 40% 35% at 92% 94%,
+        rgba(204,158,76,.16), transparent 70%);
+
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+main{
+    width: 100%;
+    max-width: 1350px;
+    margin: 0 auto 30px;
+}
+
+header,
+footer{
+    width: 100%;
+}
+
+::selection {
+    color: var(--bistre);
+    background: var(--gold);
+}
+
+/* ===== CABEÇALHO E MENU (igual ao das outras páginas) ===== */
+
+header {
+    padding: 40px 0 0;
+    text-align: center;
+    color: var(--dun);
+
+    background:
+        radial-gradient(circle at 92% 0%,
+        rgba(204,158,76,.30), transparent 50%),
+        linear-gradient(160deg,
+        #86321d 0%,
+        var(--seal-brown) 55%,
+        #4a180d 100%);
+
+    border-bottom: 4px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+    margin: 0 auto 30px;
+}
+
+.logo {
+    margin: 0 auto 28px;
+    font-family: var(--fonte-logo);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--dun);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid rgba(224,208,182,.20);
+    justify-content: space-around;
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    color: rgba(224,208,182,.78);
+    font-size: .95rem;
+    font-weight: 500;
+    text-decoration: none;
+    background: transparent;
+    border-bottom: 3px solid transparent;
+    transition: color .25s ease, background-color .25s ease, border-color .25s ease;
+    flex: 1;
+}
+
+nav a:hover {
+    color: var(--dun);
+    background: rgba(224,208,182,.08);
+}
+
+nav a#aba-ativa,
+nav a[aria-current="page"] {
+    color: var(--gold);
+    font-weight: 600;
+    background: rgba(204,158,76,.10);
+    border-bottom-color: var(--gold);
+}
+
+/* ===== TÍTULO DA ABA ===== */
+
+main > .aba {
+    width: 100%;
+    margin: 0 0 30px;
+    padding: 25px;
+    text-align: center;
+
+    background:
+        linear-gradient(160deg,
+        #86321d,
+        var(--seal-brown-escuro));
+
+    border: 1px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+}
+
+main > .aba h1 {
+    font-family: var(--fonte-titulo);
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--dun);
+}
+
+/* ===== CARDS DAS PESSOAS ===== */
+
+.pessoa {
+    display: flex;
+    align-items: stretch;
+    gap: 26px;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 25px;
+
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+
+    transition: box-shadow .3s ease,
+                transform .3s ease;
+}
+
+.pessoa:hover {
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-3px);
+}
+
+/* A Valéria tem o texto antes da foto no HTML,
+   então os lados se alternam naturalmente. */
+.pessoa1,
+.pessoa2 {
+    flex-direction: row;
+}
+
+/* ===== IMAGENS ===== */
+
+.imagem {
+    flex: 0 0 280px;
+    align-self: flex-start;
+    padding: 8px;
+
+    background: var(--dun);
+    border: 2px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+    overflow: hidden;
+
+    transition: box-shadow .3s ease,
+                transform .3s ease,
+                border-color .3s ease;
+}
+
+.imagem:hover {
+    border-color: var(--gold-claro);
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-3px);
+}
+
+.imagem img {
+    display: block;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: var(--raio-medio);
+
+    transition: transform .4s ease;
+}
+
+.imagem:hover img {
+    transform: scale(1.025);
+}
+
+/* ===== INFORMAÇÕES ===== */
+
+.informacoes {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 30px;
+
+    background: var(--seal-brown);
+    border: 2px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+
+    transition: border-color .25s ease,
+                box-shadow .25s ease;
+}
+
+.informacoes:hover {
+    border-color: var(--gold-claro);
+    box-shadow: var(--sombra-hover);
+}
+
+/* ===== NOMES ===== */
+
+.informacoes h2 {
+    margin-bottom: 12px;
+    font-family: var(--fonte-titulo);
+    font-size: clamp(1.6rem, 2.3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--dun);
+}
+
+/* ===== TEXTOS ===== */
+
+.informacoes p {
+    margin-bottom: 24px;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--dun);
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+/* ===== BOTÃO SAIBA MAIS ===== */
+
+.saiba-mais {
+    display: inline-block;
+    margin-top: auto;
+    padding: 11px 24px;
+
+    font-family: var(--fonte-texto);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    color: var(--bistre);
+    background: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: var(--raio-medio);
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.20);
+    transition: background .25s ease,
+                color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+}
+
+.saiba-mais:hover {
+    color: var(--dun-claro);
+    background: var(--seal-brown-escuro);
+    border-color: var(--gold-claro);
+    box-shadow: var(--sombra-hover);
+    transform: translateY(-3px);
+}
+
+.saiba-mais:active {
+    transform: translateY(0);
+}
+
+/* ===== BOTÃO INFERIOR (VOLTAR) ===== */
+
+.voltar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.voltar a {
+    display: inline-block;
+    padding: 12px 35px;
+
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--dun);
+
+    background: linear-gradient(160deg,
+    #86321d,
+    var(--seal-brown-escuro));
+
+    border: 2px solid var(--gold);
+    border-radius: var(--raio-medio);
+    box-shadow: var(--sombra);
+
+    transition: color .25s ease, background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+.voltar a:hover {
+    color: var(--bistre);
+    background: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-hover);
+}
+
+/* ===== RODAPÉ ===== */
+
+footer {
+    padding: 28px 25px;
+    text-align: center;
+    font-size: .92rem;
+    color: rgba(224,208,182,.85);
+    background: linear-gradient(160deg, #3a2314, #1f1209);
+    border-top: 4px solid var(--gold);
+    border-radius: var(--raio-grande);
+    box-shadow: var(--sombra);
+}
+
+footer p{
+    margin: 0px;
+}
+
+footer p:first-child {
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+/* ===== ACESSIBILIDADE ===== */
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+    border-radius: var(--raio-pequeno);
+}
+
+/* ===== TABLETS ===== */
+
+@media (max-width: 900px) {
+    body {
+        padding: 18px;
+    }
+
+    .pessoa {
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .imagem {
+        flex-basis: 220px;
+    }
+
+    .imagem img {
+        height: 300px;
+    }
+
+    .informacoes {
+        padding: 25px;
+    }
+}
+
+/* ===== CELULARES ===== */
+
+@media (max-width: 768px) {
+    .pessoa,
+    .pessoa1,
+    .pessoa2 {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    /* Foto sempre acima do texto, inclusive na Valéria */
+    .imagem {
+        order: -1;
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 340px;
+        align-self: center;
+    }
+
+    .imagem img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .informacoes {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .saiba-mais {
+        margin-top: 5px;
+    }
+}
+
+/* ===== TELAS PEQUENAS ===== */
+
+@media (max-width: 650px) {
+    body {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    header {
+        padding: 28px 12px 0;
+        border-radius: var(--raio-medio);
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        flex: 1 1 auto;
+        padding: 12px 10px;
+        font-size: .88rem;
+    }
+
+    main > .aba {
+        padding: 20px;
+    }
+
+    .pessoa {
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+
+    .informacoes {
+        padding: 22px;
+    }
+
+    .informacoes p {
+        font-size: 1rem;
+    }
+}
+
+/* ===== TELAS MUITO PEQUENAS ===== */
+
+@media (max-width: 400px) {
+    body {
+        padding: 8px;
+    }
+
+    .informacoes {
+        padding: 16px;
+    }
+
+    .pessoa {
+        padding: 12px;
+    }
+
+    nav a {
+        padding: 11px 7px;
+        font-size: .82rem;
+    }
+
+    .saiba-mais {
+        width: 100%;
+    }
+}
+
+/* ===== IMPRESSÃO ===== */
+
+@media print {
+    body {
+        padding: 0;
+        color: #000;
+        background: #fff;
+    }
+
+    nav,
+    .voltar {
+        display: none;
+    }
+
+    header,
+    footer,
+    main > .aba {
+        color: #000;
+        background: #fff;
+        border: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .logo,
+    footer p,
+    main > .aba h1 {
+        color: #000;
+    }
+
+    .pessoa {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+
+    .imagem,
+    .informacoes {
+        box-shadow: none;
+    }
+
+    .informacoes {
+        color: #000;
+        background: #fff;
+    }
+
+    .informacoes h2,
+    .informacoes p {
+        color: #000;
+    }
+
+    .saiba-mais {
+        display: none;
+    }
+}
+
+/* ===== REDUÇÃO DE MOVIMENTO ===== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}   
